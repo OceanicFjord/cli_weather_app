@@ -35,3 +35,9 @@ class ConfigManager:
                 json.dump(self.config, f, indent=2, ensure_ascii=False)
         except IOError as e:
             print(f"[ConfigManager] FEHLER beim Schreiben der Datei '{self.config_path}': {e}")
+    
+    def get_api_key(self) -> str:
+        #  self.config["api_key"] returnen
+        return self.config["api_key"]
+    
+
