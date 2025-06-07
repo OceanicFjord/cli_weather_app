@@ -28,3 +28,10 @@ class ConfigManager:
             self._save()
             return
 
+    def _save(self):
+        # Öffnet Datei im Schreibmodus und json.dump(self.config)
+        try:
+            with open(self.config_path, 'w', encoding='utf-8') as f:
+                json.dump(self.config, f, indent=2, ensure_ascii=False)
+        except IOError as e:
+            print(f"[ConfigManager] FEHLER beim Schreiben der Datei '{self.config_path}': {e}")
