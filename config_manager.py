@@ -55,3 +55,12 @@ class ConfigManager:
             return True
         else:
             return False
+
+    def remove_favorite(self, city_name: str) -> bool:
+        city = city_name.strip()
+        if city and city in self.config["favorites"]:
+            self.config["favorites"].remove(city)
+            self._save()
+            return True
+        else:
+            return False
