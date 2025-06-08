@@ -37,7 +37,6 @@ class ConfigManager:
             print(f"[ConfigManager] FEHLER beim Schreiben der Datei '{self.config_path}': {e}")
     
     def get_api_key(self) -> str:
-        #  self.config["api_key"] returnen
         return self.config["api_key"]
     
     def set_api_key(self, key: str) -> None:
@@ -45,5 +44,6 @@ class ConfigManager:
         self.config["api_key"] = key.strip()
         self._save()
 
-    
+    def get_favorites(self) -> list:
+        return list(self.config["favorites"])
 
