@@ -47,3 +47,11 @@ class ConfigManager:
     def get_favorites(self) -> list:
         return list(self.config["favorites"])
 
+    def add_favorite(self, city_name: str) -> bool:
+        city = city_name.strip()
+        if city and city not in self.config["favorites"]:
+            self.config["favorites"].append(city_name)
+            self._save()
+            return True
+        else:
+            return False
