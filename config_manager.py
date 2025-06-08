@@ -40,4 +40,10 @@ class ConfigManager:
         #  self.config["api_key"] returnen
         return self.config["api_key"]
     
+    def set_api_key(self, key: str) -> None:
+        # key säubern, in self.config übernehmen, _save() aufrufen
+        self.config["api_key"] = key.strip()
+        self._save()
+
+    
 
