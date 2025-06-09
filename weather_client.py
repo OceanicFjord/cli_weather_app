@@ -12,7 +12,7 @@ class WeatherClient:
         self.api_key = api_key
 
     def get_current(self, city: str) -> Dict:
-        URL = self.BASE_URL + "weather"
+        url = self.BASE_URL + "weather"
         
         params = {
             "q": city,
