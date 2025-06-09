@@ -1,18 +1,18 @@
 # CLI Weather App
 
-Kleine, feine Kommandozeilen-Anwendung, um aktuelles Wetter und 5-Tage-Vorhersage über die OpenWeatherMap-API abzurufen und eigene Favoriten-Städte zu verwalten.
+**CLI Weather App** ist eine schlanke Kommandozeilen-Anwendung, mit der du dir jederzeit das aktuelle Wetter und eine 5-Tage-Vorhersage (jeweils 12:00 Uhr) für beliebige Städte anzeigen lassen kannst. Über eine integrierte Favoritenverwaltung legst du deine meistgenutzten Orte einmal an und greifst sie dann mit einem einzigen Befehl ab.
 
 ## Features
 
-- **API-Key** per CLI setzen, nie im Code hardcoded  
-- **Favoriten**: Städte hinzufügen, entfernen und auflisten  
-- **Aktuelles Wetter** für eine beliebige Stadt abrufen  
-- **5-Tage-Vorhersage** (jeweils 12 Uhr) für eine Stadt holen  
-- Saubere OOP-Struktur:  
-  - `ConfigManager` für Config-Datei (`config.json`)  
-  - `WeatherClient` für API-Kommunikation  
-  - `weather_app.py` als CLI-Interface mit `argparse`
-
+- **API-Key per CLI**: Nie im Code gespeichert, lokal in `config.json` abgelegt  
+- **Favoriten verwalten**: Städte über die Kommandozeile hinzufügen, entfernen und listen  
+- **Aktuelles Wetter**: Temperatur, Luftfeuchtigkeit, Windgeschwindigkeit und Bedingungen  
+- **5-Tage-Vorhersage**: Tageswerte („Mittag“) für die nächsten fünf Tage  
+- **Modulare Klassenstruktur**:  
+  - `ConfigManager` für Konfigurationsdatei (`config.json`)  
+  - `WeatherClient` für HTTP-Requests an OpenWeatherMap  
+  - `weather_app.py` als übersichtliches CLI-Interface (mit `argparse`)
+  
 ## Installation
 
 1. Repository klonen  
