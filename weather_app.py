@@ -15,3 +15,13 @@ def print_current_weather(client: WeatherClient, city: str) -> None:
         print(f"  Bedingungen: {weather['description']}")
     except Exception as e:
         print(f"Fehler beim Abrufen des Wetters für {city}: {e}")
+
+def print_forecast(client: WeatherClient, city: str) -> None:
+    try:
+        forecast = client.get_forecast(city)
+        print(f"Wettervorhersage für {city}:")
+        for entry in forecast:
+            print(f"{entry['date']}: {entry['temperature']} °C, {entry['description']}")
+    except Exception as e:
+        print(f"Fehler beim Abrufen der Wettervorhersage für {city}: {e}")
+
